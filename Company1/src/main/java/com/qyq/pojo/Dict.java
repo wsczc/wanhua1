@@ -12,17 +12,18 @@ public class Dict implements Serializable {
     private Integer data_type;
     private String data_code;
     private String data_value;
-    private Integer data_tag;
+    @Column(name="data_tag")
+    private Integer datatag;
     private String data_desc;
     private Integer order_no;
 
 
     public Integer getData_tag() {
-        return data_tag;
+        return datatag;
     }
 
     public void setData_tag(Integer data_tag) {
-        this.data_tag = data_tag;
+        this.datatag = data_tag;
     }
 
     public Integer getId() {
@@ -81,12 +82,12 @@ public class Dict implements Serializable {
         this.order_no = order_no;
     }
 
-    public Dict(Integer pid, Integer data_type, String data_code, String data_value, Integer data_tag, String data_desc, Integer order_no) {
+    public Dict(Integer pid, Integer data_type, String data_code, String data_value, Integer datatag, String data_desc, Integer order_no) {
         this.pid = pid;
         this.data_type = data_type;
         this.data_code = data_code;
         this.data_value = data_value;
-        this.data_tag = data_tag;
+        this.datatag = datatag;
         this.data_desc = data_desc;
         this.order_no = order_no;
     }
@@ -102,7 +103,7 @@ public class Dict implements Serializable {
                 ", data_type=" + data_type +
                 ", data_code='" + data_code + '\'' +
                 ", data_value='" + data_value + '\'' +
-                ", data_tag=" + data_tag +
+                ", datatag=" + datatag +
                 ", data_desc='" + data_desc + '\'' +
                 ", order_no=" + order_no +
                 '}';

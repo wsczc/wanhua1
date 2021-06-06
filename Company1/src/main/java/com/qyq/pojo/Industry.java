@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Table(name = "t_industry")
 public class Industry implements Serializable {
     @Id
-    private Integer in;
+    private Integer id;
     private String name;
     private  String remark;
     private Integer order_no;
@@ -16,19 +16,19 @@ public class Industry implements Serializable {
     @Override
     public String toString() {
         return "Industry{" +
-                "in=" + in +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", remark='" + remark + '\'' +
                 ", order_no=" + order_no +
                 '}';
     }
 
-    public Integer getIn() {
-        return in;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIn(Integer in) {
-        this.in = in;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -56,7 +56,7 @@ public class Industry implements Serializable {
     }
 
     public Industry(Integer in, String name, String remark, Integer order_no) {
-        this.in = in;
+        this.id = id;
         this.name = name;
         this.remark = remark;
         this.order_no = order_no;

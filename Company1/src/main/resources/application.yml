@@ -1,20 +1,18 @@
 server:
   port: 8081
-
-#JDBC配置
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/t?serverTimezone=UTC
     username: zc
     password: 123456
-    #整合数据库连接池
-    # hikari:
   jpa:
     database: mysql
     show-sql: true
-
-#      ddl-auto: update
+    generate-ddl: true
+  data:
+    mongodb:
+      uri:  mongodb://admin:123456@localhost:27017/whTitle
 
   #mybatis:
   #mapper-locations: classpath:mapper/*.xml

@@ -2,6 +2,7 @@ package com.qyq.controller;
 
 import com.qyq.dao.CompanyDao;
 import com.qyq.pojo.Company;
+import com.qyq.pojo.Result;
 import com.qyq.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,13 +11,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("company")
 public class CompanyController {
 
@@ -25,8 +29,17 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-    @RequestMapping("/findAll")
-    public String findAll() {
+    @RequestMapping(method = RequestMethod.GET)
+    public Result findAll(){
+         Result result= new Result(true,200,"查询成功",companyService.findAll());
+          System.out.println(result);
+         return result;
+
+    }
+
+
+    @RequestMapping("/findAll1")
+    public String findAll1() {
         List<Company> companyList = companyService.findAll();
         for (Company company : companyList) {
             System.out.println(company);
