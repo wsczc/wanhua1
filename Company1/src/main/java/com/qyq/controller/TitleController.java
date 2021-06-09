@@ -50,14 +50,14 @@ public class TitleController {
         return new Result(true, 200, "ok", all);
     }
 
-   /* @RequestMapping("findByname")
+    @RequestMapping("findByname")
     public List<Title> findByname(String name) {
         name = "嘻嘻嘻";
         List<Title> titles = titleService.selectByName(name);
         return titles;
-    }*/
+    }
 
-   /* @RequestMapping("updateTitle")
+    @RequestMapping("updateTitle")
     public String updateTitle(Title title) {
         Example<Title> titleExample = Example.of(title, UntypedExampleMatcher.matchingAny());
         Optional<Title> findOne = titleService.findOne(titleExample);
@@ -68,13 +68,13 @@ public class TitleController {
             titleService.save(updae);
         }
         return "ok";
-    }*/
+    }
 
-   /* @RequestMapping("deleteTitle")
+    @RequestMapping("deleteTitle")
     public String deleteTitle(Integer id) {
         Optional<Title> byId = titleService.findById(id);
         System.out.println(0);
         return "ok";
-    }*/
+    }
 
 }

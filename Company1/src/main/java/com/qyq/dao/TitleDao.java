@@ -14,14 +14,14 @@ import java.util.List;
 
 @Repository
 public interface TitleDao extends MongoRepository<Title,Integer> {
-   /* @Query(value = "select * from titlee where titleName like?")
+
+    @Query(value = "select * from titlee where titleName like?")
     List<Title> selectByName(String name);
 
     Title findByTitleName(String tltleName);
-*/
-    /*@Autowired
-    private MongoTemplate mongoTemplate;
 
+  /*  @Autowired
+    private MongoTemplate mongoTemplate;
     public void addTitle(Title title) {
         mongoTemplate.save(title);
     }*/
