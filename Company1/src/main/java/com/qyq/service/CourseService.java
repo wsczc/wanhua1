@@ -3,6 +3,7 @@ package com.qyq.service;
 import com.qyq.dao.CourseDao;
 import com.qyq.pojo.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -20,7 +21,7 @@ public class CourseService {
         course.setOrder_no(1);
         courseDao.save(course);
     }
-
+    @Cacheable
     public Course findByid(Integer id) {
        return courseDao.findByid(id);
     }
